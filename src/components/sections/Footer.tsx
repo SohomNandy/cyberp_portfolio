@@ -106,7 +106,7 @@ export default function Footer() {
               <div className="terminal-dot bg-destructive" />
               <div className="terminal-dot bg-[#ffb000]" />
               <div className="terminal-dot bg-accent" />
-              <span className="ml-2 text-accent">// SYS_INFO</span>
+              <span className="ml-2 text-accent">{/* SYS_INFO */}</span>
             </div>
             <div className="p-5">
               {[

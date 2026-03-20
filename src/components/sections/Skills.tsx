@@ -38,29 +38,6 @@ const skillGroups = [
   },
 ];
 
-const certs = [
-  {
-    title: "Google Cybersecurity Professional Certificate",
-    issuer: "Coursera / Google",
-    topics: "Threat detection, network security, incident response",
-    color: "#00ff88",
-    badge: "CERT_001",
-  },
-  {
-    title: "Postman Student Expert",
-    issuer: "Postman",
-    topics: "API testing, automation, security testing",
-    color: "#ff00ff",
-    badge: "CERT_002",
-  },
-  {
-    title: "HuggingFace Model Publish",
-    issuer: "HuggingFace Hub",
-    topics: "sohomn/siem-log-generator-llama31-8b",
-    color: "#00d4ff",
-    badge: "OPEN_SRC",
-  },
-];
 
 export default function Skills() {
   const { ref, inView } = useInView(0.1);

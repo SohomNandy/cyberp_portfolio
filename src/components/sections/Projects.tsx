@@ -1,6 +1,6 @@
 "use client";
 import { useInView } from "@/hooks/useInView";
-import { Github, ExternalLink, ChevronRight, Cpu, Shield, Brain } from "lucide-react";
+import { Github, ExternalLink, ChevronRight, Shield, Brain } from "lucide-react";
 
 const projects = [
   {
@@ -212,7 +212,7 @@ function ProjectCard({
                 clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
               }}
             >
-              <div className="font-label text-xs text-muted-fg tracking-widest mb-3">// METRICS</div>
+              <div className="font-label text-xs text-muted-fg tracking-widest mb-3">{/* METRICS */}</div>
               <div className="space-y-2">
                 {project.metrics.map((m) => (
                   <div key={m.label} className="flex justify-between items-center">

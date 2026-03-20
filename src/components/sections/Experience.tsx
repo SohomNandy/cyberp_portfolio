@@ -1,6 +1,6 @@
 "use client";
 import { useInView } from "@/hooks/useInView";
-import { Briefcase, Calendar, MapPin, ChevronRight } from "lucide-react";
+import { Calendar, MapPin, ChevronRight } from "lucide-react";
 
 const experiences = [
   {

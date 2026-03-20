@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef } from "react";
-import { Send, Github, Linkedin, Mail, Phone, ExternalLink } from "lucide-react";
+import { Send, Github, Linkedin, Phone, Mail, ExternalLink } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
 // ─── Loaded from .env.local ───────────────────────────────────────────────────
@@ -14,7 +14,7 @@ const contactLinks = [
   { icon: Phone,        label: "PHONE",      value: "+91 9339202157",                 href: "tel:+919339202157",                                                       color: "#00d4ff" },
   { icon: Github,       label: "GITHUB",     value: "github.com/SohomNandy",          href: "https://github.com/SohomNandy",                                           color: "#ff00ff" },
   { icon: Linkedin,     label: "LINKEDIN",   value: "linkedin.com/in/sohom-nandy",    href: "https://linkedin.com/in/sohom-nandy",                                     color: "#ffb000" },
-  { icon: ExternalLink, label: "HUGGINGFACE",value: "huggingface/sohomn",      href: "https://huggingface.co/sohomn",             color: "#00d4ff" },
+  { icon: ExternalLink, label: "HUGGINGFACE",value: "sohomn/siem-log-generator",      href: "https://huggingface.co/sohomn/siem-log-generator-llama31-8b",             color: "#00d4ff" },
 ];
 
 type Status = "idle" | "sending" | "success" | "error";
@@ -29,11 +29,6 @@ export default function Contact() {
     e.preventDefault();
     setStatus("sending");
     setErrorMsg("");
-
-    // // DEBUG — remove after confirming it works
-    // console.log("SERVICE_ID:",  EMAILJS_SERVICE_ID);
-    // console.log("TEMPLATE_ID:", EMAILJS_TEMPLATE_ID);
-    // console.log("PUBLIC_KEY:",  EMAILJS_PUBLIC_KEY);
 
     try {
       await emailjs.sendForm(
@@ -111,7 +106,7 @@ export default function Contact() {
               className="mt-6 border border-border bg-card/50 p-5"
               style={{ clipPath: "polygon(0 10px,10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px))" }}
             >
-              <div className="font-label text-xs text-accent tracking-widest mb-3">// EDUCATION</div>
+              <div className="font-label text-xs text-accent tracking-widest mb-3">&#47;&#47; EDUCATION</div>
               <div className="text-[#e0e0e0] text-sm font-mono">B.Tech – Computer Science</div>
               <div className="text-muted-fg text-xs font-label tracking-wider mt-1">Sister Nivedita University, Kolkata</div>
               <div className="flex items-center gap-3 mt-2">
@@ -172,8 +167,8 @@ export default function Contact() {
 
                 {/* Routing info line */}
                 <div className="font-mono text-xs text-muted-fg border-b border-border pb-3 mb-1">
-                  <span className="text-accent">&gt;</span> ROUTE: <span className="text-tertiary">you</span>
-                  <span className="text-muted-fg mx-1">──▶</span>
+                  <span className="text-accent">&gt;</span>{" "}ROUTE:{" "}<span className="text-tertiary">you</span>
+                  <span className="text-muted-fg mx-1">{" "}──▶{" "}</span>
                   <span className="text-accent">sohomnandy9@gmail.com</span>
                 </div>
 

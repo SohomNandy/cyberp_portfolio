@@ -1,6 +1,6 @@
 "use client";
 import { useTypewriter } from "@/hooks/useTypewriter";
-import { ArrowRight, Terminal, Github, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowRight, Terminal, Github, Linkedin, Mail } from "lucide-react";
 
 const roles = [
   "ML SECURITY ENGINEER",
@@ -119,7 +119,8 @@ export default function Hero() {
           </div>
 
           {/* Right — HUD Panel (2 cols) */}
-          <div className="lg:col-span-2 hidden lg:block">
+          {/* pr-12 creates breathing room for the vertical tab outside the panel */}
+          <div className="lg:col-span-2 hidden lg:block pr-14">
             <IdentityPanel />
           </div>
         </div>
@@ -136,18 +137,24 @@ export default function Hero() {
 
 function IdentityPanel() {
   const skills = [
-    { label: "ML / GNN", val: 90, color: "#00ff88" },
+    { label: "ML / GNN",      val: 90, color: "#00ff88" },
     { label: "LLM FINE-TUNE", val: 85, color: "#00d4ff" },
     { label: "CYBERSECURITY", val: 80, color: "#ff00ff" },
     { label: "BACKEND / API", val: 75, color: "#ffb000" },
-    { label: "FRONTEND", val: 65, color: "#00d4ff" },
+    { label: "FRONTEND",      val: 65, color: "#00d4ff" },
   ];
 
   return (
-    <div className="relative">
+    // relative + overflow-visible so the tab can peek out to the right
+    <div className="relative" style={{ overflow: "visible" }}>
+
+      {/* Main panel */}
       <div
         className="border border-border bg-card/80 backdrop-blur-sm overflow-hidden"
-        style={{ clipPath: "polygon(0 20px,20px 0,calc(100% - 20px) 0,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0 calc(100% - 20px))" }}
+        style={{
+          clipPath:
+            "polygon(0 20px,20px 0,calc(100% - 20px) 0,100% 20px,100% calc(100% - 20px),calc(100% - 20px) 100%,20px 100%,0 calc(100% - 20px))",
+        }}
       >
         <div className="terminal-header">
           <div className="terminal-dot bg-destructive" />
@@ -159,18 +166,18 @@ function IdentityPanel() {
 
         <div className="p-5 font-mono text-xs space-y-1">
           <div className="text-muted-fg">{"{"}</div>
-          <JsonLine k="name" v='"Sohom Nandy"' vc="accent" />
-          <JsonLine k="role" v='"AI/ML Engineer"' vc="tertiary" />
-          <JsonLine k="location" v='"Kolkata, IN"' vc="secondary" />
-          <JsonLine k="cgpa" v="8.20" vc="accent" />
-          <JsonLine k="status" v='"hunting_opportunities"' vc="accent" />
+          <JsonLine k="name"        v='"Sohom Nandy"'                          vc="accent"   />
+          <JsonLine k="role"        v='"AI/ML Engineer"'                       vc="tertiary" />
+          <JsonLine k="location"    v='"Kolkata, IN"'                          vc="secondary"/>
+          <JsonLine k="cgpa"        v="8.20"                                   vc="accent"   />
+          <JsonLine k="status"      v='"hunting_opportunities"'                vc="accent"   />
           <JsonLine k="huggingface" v='"sohomn/siem-log-generator-llama31-8b"' vc="tertiary" />
           <div className="text-muted-fg">{"}"}</div>
         </div>
 
         <div className="border-t border-border px-5 py-4">
           <div className="text-accent font-label text-xs mb-3 tracking-widest">
-            // PROFICIENCY INDEX
+            {/* PROFICIENCY INDEX */}
           </div>
           <div className="space-y-2.5">
             {skills.map((s, i) => (
@@ -196,25 +203,32 @@ function IdentityPanel() {
         </div>
       </div>
 
-      {/* Vertical tab badge on right edge */}
+      {/* Vertical OPEN_TO_HIRE tab — 8px gap from panel edge */}
       <div
-        className="absolute top-0 -right-12 h-full flex items-center pointer-events-none"
+        className="absolute top-0 h-full flex items-center"
+        style={{ left: "calc(100% + 8px)" }}
         aria-hidden="true"
       >
         <div
-          className="flex items-center justify-center bg-card border border-accent text-accent font-label"
+          className="flex flex-col items-center justify-center gap-3 bg-card border border-accent text-accent font-label ml-1"
           style={{
             writingMode: "vertical-rl",
             textOrientation: "mixed",
-            transform: "rotate(360deg)",
-            fontSize: "12px",
+            transform: "rotate(180deg)",
+            fontSize: "9px",
             letterSpacing: "3px",
-            padding: "14px 8px",
-            boxShadow: "0 0 12px rgba(0,255,136,0.25)",
-            clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
+            padding: "16px 6px",
+            boxShadow: "0 0 14px rgba(0,255,136,0.2)",
+            clipPath:
+              "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
+            whiteSpace: "nowrap",
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse inline-block mb-2" style={{ boxShadow: "0 0 4px #00ff88" }} />
+          {/* pulse dot — appears at top when rotated */}
+          <span
+            className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"
+            style={{ boxShadow: "0 0 5px #00ff88", flexShrink: 0 }}
+          />
           OPEN_TO_HIRE
         </div>
       </div>
