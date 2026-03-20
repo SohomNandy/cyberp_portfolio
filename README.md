@@ -1,4 +1,4 @@
-# NEXUS — Sohom Nandy Portfolio
+# My Portfolio
 
 A cyberpunk-themed portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
 
