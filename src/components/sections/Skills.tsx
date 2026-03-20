@@ -135,7 +135,8 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Certifications */}
+
+        {/* CERTS HIDDEN — uncomment to re-enable
         <div className="mt-10">
           <div className="font-mono text-xs text-muted-fg mb-5 flex items-center gap-2">
             <span className="text-accent">nexus@sohom:~$</span>
@@ -172,6 +173,7 @@ export default function Skills() {
             ))}
           </div>
         </div>
+        */}
       </div>
     </section>
   );

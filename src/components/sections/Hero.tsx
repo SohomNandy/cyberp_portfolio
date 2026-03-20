@@ -163,7 +163,7 @@ function IdentityPanel() {
           <JsonLine k="role" v='"AI/ML Engineer"' vc="tertiary" />
           <JsonLine k="location" v='"Kolkata, IN"' vc="secondary" />
           <JsonLine k="cgpa" v="8.20" vc="accent" />
-          <JsonLine k="status" v='"seeking_opportunities"' vc="accent" />
+          <JsonLine k="status" v='"hunting_opportunities"' vc="accent" />
           <JsonLine k="huggingface" v='"sohomn/siem-log-generator-llama31-8b"' vc="tertiary" />
           <div className="text-muted-fg">{"}"}</div>
         </div>
@@ -196,15 +196,27 @@ function IdentityPanel() {
         </div>
       </div>
 
-      {/* Float chip */}
+      {/* Vertical tab badge on right edge */}
       <div
-        className="absolute -top-3 -right-3 px-2 py-1 bg-card border border-accent text-accent font-label text-xs"
-        style={{
-          clipPath: "polygon(0 4px,4px 0,calc(100% - 4px) 0,100% 4px,100% calc(100% - 4px),calc(100% - 4px) 100%,4px 100%,0 calc(100% - 4px))",
-          boxShadow: "0 0 12px rgba(0,255,136,0.3)",
-        }}
+        className="absolute top-0 -right-12 h-full flex items-center pointer-events-none"
+        aria-hidden="true"
       >
-        OPEN_TO_HIRE
+        <div
+          className="flex items-center justify-center bg-card border border-accent text-accent font-label"
+          style={{
+            writingMode: "vertical-rl",
+            textOrientation: "mixed",
+            transform: "rotate(360deg)",
+            fontSize: "12px",
+            letterSpacing: "3px",
+            padding: "14px 8px",
+            boxShadow: "0 0 12px rgba(0,255,136,0.25)",
+            clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
+          }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse inline-block mb-2" style={{ boxShadow: "0 0 4px #00ff88" }} />
+          OPEN_TO_HIRE
+        </div>
       </div>
     </div>
   );

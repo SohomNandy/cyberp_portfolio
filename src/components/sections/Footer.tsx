@@ -29,19 +29,27 @@ export default function Footer() {
 
           {/* ASCII logo + bio */}
           <div className="md:col-span-2">
-            <pre
-              className="font-mono leading-tight mb-5 overflow-x-auto"
-              style={{
-                fontSize: "clamp(5px, 1.1vw, 11px)",
-                color: "#00ff88",
-                textShadow:
-                  "0 0 8px rgba(0,255,136,0.6), -1px 0 rgba(255,0,255,0.3), 1px 0 rgba(0,212,255,0.3)",
-                letterSpacing: "0",
-                lineHeight: "1.15",
-              }}
+            <div
+              className="mb-5 overflow-x-auto"
+              style={{ maxWidth: "100%" }}
             >
-              {ASCII_LOGO}
-            </pre>
+              {ASCII_LOGO.split("\n").map((line, i) => (
+                <div
+                  key={i}
+                  className="font-mono whitespace-pre"
+                  style={{
+                    fontSize: "clamp(10px, 1.8vw, 17px)",
+                    color: "#00ff88",
+                    textShadow:
+                      "0 0 8px rgba(0,255,136,0.6), -1px 0 rgba(255,0,255,0.3), 1px 0 rgba(0,212,255,0.3)",
+                    letterSpacing: "0.08em",
+                    lineHeight: "1.35",
+                  }}
+                >
+                  {line}
+                </div>
+              ))}
+            </div>
 
             <p className="text-muted-fg text-xs font-mono leading-relaxed max-w-md border-l-2 border-accent pl-3 mb-5">
               &gt; AI/ML Engineer &nbsp;·&nbsp; GNN Researcher &nbsp;·&nbsp; LLM Fine-tuner

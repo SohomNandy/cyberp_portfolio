@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "SOHOM NANDY // AI-ML ENGINEER",
+  title: "Hey, it's Sohom",
   description:
     "Portfolio of Sohom Nandy — ML Security, GNN Researcher, LLM Fine-tuner. Building multi-cloud threat intelligence from Kolkata.",
   keywords: ["Sohom Nandy", "ML Engineer", "GNN", "LLM", "Cybersecurity", "Portfolio"],

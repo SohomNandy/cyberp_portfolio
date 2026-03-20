@@ -31,16 +31,16 @@ const achievements = [
     issuer: "Coursera / Google",
     detail: "Threat detection, network security, incident response — full professional certification track.",
     color: "#00ff88",
-    link: null,
+    link: "https://coursera.org/share/7c9131fecb14c00cb587ce65f580f1a2",
   },
-  {
-    id: "ACH_003",
-    title: "Postman Student Expert",
-    issuer: "Postman Inc.",
-    detail: "API testing, automation, security testing — verified expert certification.",
-    color: "#ff00ff",
-    link: null,
-  },
+  // {
+  //   id: "ACH_003",
+  //   title: "Postman Student Expert",
+  //   issuer: "Postman Inc.",
+  //   detail: "API testing, automation, security testing — verified expert certification.",
+  //   color: "#ff00ff",
+  //   link: null,
+  // },
 ];
 
 export default function Education() {
