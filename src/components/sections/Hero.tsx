@@ -297,7 +297,7 @@ function IdentityPanel() {
             clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
             display: "flex", alignItems: "center", gap: "6px",
           }}>
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0"
+          <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse shrink-0"
             style={{ boxShadow: "0 0 5px #00ff88" }} />
           OPEN_TO_HIRE
         </div>
