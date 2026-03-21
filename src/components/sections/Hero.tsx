@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
 
             {/* Bio */}
-            <p className="text-muted-fg text-xs sm:text-sm leading-relaxed font-mono border-l-2 border-accent pl-3 sm:pl-4">
+            <p className="text-muted-fg text-xs sm:text-base leading-relaxed font-mono border-l-2 border-accent pl-3 sm:pl-4">
               Final-year B.Tech CS @{" "}
               <span className="text-accent">Sister Nivedita University</span>.
               Building <span className="text-tertiary">multi-cloud threat intelligence</span> with GNNs.
@@ -106,6 +106,27 @@ export default function Hero() {
                 </a>
               ))}
             </div>
+
+            {/* Stats strip — anchors left column bottom on desktop */}
+            <div className="hidden lg:flex items-stretch gap-0 mt-2 pt-4 border-t border-border">
+              {[
+                { val: "83%",   label: "PRECISION GAIN",   color: "#00ff88" },
+                { val: "410K+", label: "TRAINING PAIRS",   color: "#00d4ff" },
+                { val: "8.20",  label: "CGPA",             color: "#ffb000" },
+              ].map((s, i) => (
+                <div key={s.label}
+                  className="flex-1 px-4 first:pl-0 border-l border-border first:border-0">
+                  <div className="font-display font-bold text-lg"
+                    style={{ color: s.color, textShadow: `0 0 8px ${s.color}60` }}>
+                    {s.val}
+                  </div>
+                  <div className="font-label text-xs text-muted-fg tracking-widest mt-0.5">
+                    {s.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
 
           {/* RIGHT — HUD panel + photo + globe, desktop only */}
@@ -113,8 +134,8 @@ export default function Hero() {
             <div className="relative pr-12" style={{ overflow: "visible" }}>
 
               {/* Globe — glowing behind everything */}
-              <div className="absolute -top-20 -left-20 opacity-60 pointer-events-none z-0"
-                style={{ filter: "drop-shadow(0 0 20px rgba(0,255,136,0.4))" }}>
+              <div className="absolute -top-20 -left-20 opacity-75 pointer-events-none z-0"
+                style={{ filter: "drop-shadow(0 0 30px rgba(0,255,136,0.7)) drop-shadow(0 0 60px rgba(0,255,136,0.3))" }}>
                 <HoloGlobeCanvas />
               </div>
 
@@ -178,10 +199,17 @@ function ProfilePhoto({ size = "md" }: { size?: "sm" | "md" }) {
       <div className="absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-accent" />
       <div className="absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 border-accent" />
 
-      {/* [VERIFIED] tag */}
-      <div className="absolute -bottom-5 left-0 right-0 text-center font-label tracking-widest text-accent"
-        style={{ fontSize: "8px", textShadow: "0 0 6px rgba(0,255,136,0.8)" }}>
-        [VERIFIED]
+      {/* [VERIFIED] — overlaid on bottom of photo inside the border */}
+      <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center"
+        style={{
+          background: "linear-gradient(transparent, rgba(0,0,0,0.75))",
+          clipPath: `polygon(0 0,100% 0,100% calc(100% - ${cut}px),calc(100% - ${cut}px) 100%,${cut}px 100%,0 calc(100% - ${cut}px))`,
+          paddingBottom: "4px", paddingTop: "8px",
+        }}>
+        <span className="font-label tracking-widest text-accent"
+          style={{ fontSize: "7px", textShadow: "0 0 6px rgba(0,255,136,1)" }}>
+          [VERIFIED]
+        </span>
       </div>
     </div>
   );
@@ -264,8 +292,8 @@ function IdentityPanel() {
         <div className="bg-card border border-accent text-accent font-label"
           style={{
             writingMode: "vertical-rl", textOrientation: "mixed",
-            transform: "rotate(180deg)", fontSize: "9px", letterSpacing: "3px",
-            padding: "16px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
+            transform: "rotate(360deg)", fontSize: "9px", letterSpacing: "3px",
+            padding: "18px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
             clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
             display: "flex", alignItems: "center", gap: "6px",
           }}>
