@@ -148,7 +148,7 @@ function IdentityPanel() {
           <JsonLine k="role"        v='"AI/ML Engineer"'                        vc="tertiary"  />
           <JsonLine k="location"    v='"Kolkata, IN"'                           vc="secondary" />
           <JsonLine k="cgpa"        v="8.20"                                    vc="accent"    />
-          <JsonLine k="status"      v='"hunting_opportunities"'                 vc="accent"    />
+          <JsonLine k="status"      v='"seeking_opportunities"'                 vc="accent"    />
           <JsonLine k="huggingface" v='"sohomn/siem-log-generator-llama31-8b"'  vc="tertiary"  />
           <div className="text-muted-fg">{"}"}</div>
         </div>
