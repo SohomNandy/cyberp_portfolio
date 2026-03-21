@@ -91,28 +91,34 @@ export default function SectionDivider() {
       ctx.lineWidth   = 1;
       ctx.stroke();
 
-      // ── 5. Corner accent brackets ──────────────────────────────────
-      const bW = 24; const bH = 8;
-      [0, W].forEach((bx, side) => {
-        const ox = side === 0 ? 0 : W - bW;
+      // ── 5. Corner accent brackets — inset from edge for alignment ──
+      const bW = 20; const bH = 8;
+      // Match page content padding: ~16px on mobile, ~24px on sm, ~32px on lg
+      const pad = W < 640 ? 16 : W < 1024 ? 24 : 32;
+      [0, 1].forEach((side) => {
+        const ox = side === 0 ? pad : W - pad;
         const alpha = 0.4 + 0.3 * Math.sin(t * 0.05 + side);
         ctx.strokeStyle = `rgba(0,255,136,${alpha})`;
+        ctx.shadowColor = `rgba(0,255,136,${alpha * 0.6})`;
+        ctx.shadowBlur  = 6;
         ctx.lineWidth   = 1.5;
+        const dir = side === 0 ? 1 : -1;
         // top arm
         ctx.beginPath();
         ctx.moveTo(ox, H / 2 - bH);
-        ctx.lineTo(ox + (side === 0 ? bW : -bW), H / 2 - bH);
+        ctx.lineTo(ox + dir * bW, H / 2 - bH);
         ctx.stroke();
         // bottom arm
         ctx.beginPath();
         ctx.moveTo(ox, H / 2 + bH);
-        ctx.lineTo(ox + (side === 0 ? bW : -bW), H / 2 + bH);
+        ctx.lineTo(ox + dir * bW, H / 2 + bH);
         ctx.stroke();
         // vertical connector
         ctx.beginPath();
         ctx.moveTo(ox, H / 2 - bH);
         ctx.lineTo(ox, H / 2 + bH);
         ctx.stroke();
+        ctx.shadowBlur = 0;
       });
 
       t++;
