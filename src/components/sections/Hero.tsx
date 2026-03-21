@@ -292,7 +292,7 @@ function IdentityPanel() {
         <div className="bg-card border border-accent text-accent font-label"
           style={{
             writingMode: "vertical-rl", textOrientation: "mixed",
-            transform: "rotate(360deg)", fontSize: "9px", letterSpacing: "3px",
+            transform: "rotate(360deg)", fontSize: "12px", letterSpacing: "3px",
             padding: "18px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
             clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
             display: "flex", alignItems: "center", gap: "6px",
