@@ -1,6 +1,5 @@
 "use client";
 import { useTypewriter } from "@/hooks/useTypewriter";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import HoloGlobeCanvas from "@/components/ui/HoloGlobeCanvas";
 import { ArrowRight, Terminal, Github, Linkedin, Mail } from "lucide-react";
 
@@ -154,7 +153,7 @@ function IdentityPanel() {
           <div className="text-muted-fg">{"}"}</div>
         </div>
         <div className="border-t border-border px-4 py-3">
-          <div className="text-accent font-label text-xs mb-3 tracking-widest">// PROFICIENCY INDEX</div>
+          <div className="text-accent font-label text-xs mb-3 tracking-widest">&#47;&#47; PROFICIENCY INDEX</div>
           <div className="space-y-2">
             {skills.map((s, i) => (
               <div key={s.label}>
@@ -181,8 +180,8 @@ function IdentityPanel() {
         <div className="flex flex-col items-center justify-center gap-3 bg-card border border-accent text-accent font-label"
           style={{
             writingMode: "vertical-rl", textOrientation: "mixed",
-            transform: "rotate(360deg)", fontSize: "12px", letterSpacing: "3px",
-            padding: "18px 9px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
+            transform: "rotate(180deg)", fontSize: "9px", letterSpacing: "3px",
+            padding: "16px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
             clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
           }}>
           <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" style={{ boxShadow: "0 0 5px #00ff88", flexShrink: 0 }} />
