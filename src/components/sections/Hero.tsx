@@ -65,9 +65,9 @@ export default function Hero() {
             <p className="text-muted-fg text-xs sm:text-sm leading-relaxed font-mono border-l-2 border-accent pl-3 sm:pl-4">
               Final-year B.Tech CS @{" "}
               <span className="text-accent">Sister Nivedita University</span>.
-              Building <span className="text-tertiary">multi-cloud threat intelligence</span> with GNNs.
-              Fine-tuning <span className="text-secondary">LLaMA 3.1 8B</span> for SIEM log generation.
-              CGPA: <span className="text-accent font-bold">8.20</span>.
+              Building <span className="text-tertiary">multi-cloud threat intelligence</span> using GNNs.
+              {/* Fine-tuning <span className="text-secondary">LLaMA 3.1 8B</span> for SIEM log generation.
+              CGPA: <span className="text-accent font-bold">8.20</span>. */}
             </p>
 
             {/* CTA Buttons */}
@@ -177,14 +177,14 @@ function IdentityPanel() {
 
       {/* Vertical OPEN_TO_HIRE tab */}
       <div className="absolute top-0 h-full flex items-center" style={{ left: "calc(100% + 8px)" }} aria-hidden="true">
-        <div className="flex flex-col items-center justify-center gap-3 bg-card border border-accent text-accent font-label"
+        <div className="flex flex-row items-center justify-center gap-6 bg-card border border-accent text-accent font-label"
           style={{
             writingMode: "vertical-rl", textOrientation: "mixed",
             transform: "rotate(360deg)", fontSize: "12px", letterSpacing: "5px",
-            padding: "18px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
+            padding: "16px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
             clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
           }}>
-          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" style={{ boxShadow: "0 0 5px #00ff88", flexShrink: 0 }} />
+          <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" style={{ boxShadow: "0 0 8px #00ff88", flexShrink: 0 }} />
           OPEN_TO_HIRE
         </div>
       </div>
