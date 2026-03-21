@@ -20,7 +20,7 @@ export default function Hero() {
         background: "radial-gradient(ellipse at 20% 50%,rgba(0,255,136,0.07) 0%,transparent 55%),radial-gradient(ellipse at 80% 20%,rgba(255,0,255,0.05) 0%,transparent 50%)",
       }} />
 
-      {/* Corner marks — hidden on mobile */}
+      {/* Corner marks */}
       <div className="absolute top-20 left-4 w-10 h-10 sm:w-16 sm:h-16 border-l-2 border-t-2 border-accent opacity-40 hidden sm:block" />
       <div className="absolute top-20 right-4 w-10 h-10 sm:w-16 sm:h-16 border-r-2 border-t-2 border-accent opacity-40 hidden sm:block" />
       <div className="absolute bottom-12 left-4 w-10 h-10 sm:w-16 sm:h-16 border-l-2 border-b-2 border-secondary opacity-30 hidden sm:block" />
@@ -40,17 +40,26 @@ export default function Hero() {
               <span className="text-accent ml-1">[OK]</span>
             </div>
 
-            {/* Name */}
-            <div className="font-display font-black uppercase leading-none">
-              <div className="text-muted-fg text-xs sm:text-sm font-label tracking-widest mb-2">&gt; IDENTIFY USER...</div>
-              <div className="glitch-text text-4xl xs:text-5xl sm:text-6xl lg:text-7xl text-accent"
-                data-text="SOHOM"
-                style={{ textShadow: "0 0 30px rgba(0,255,136,0.35),0 0 60px rgba(0,255,136,0.15)" }}>
-                SOHOM
+            {/* Mobile: photo + name side by side */}
+            <div className="flex items-start gap-4 lg:block">
+
+              {/* Photo — shown on mobile/tablet inline, hidden on lg (shown in right panel) */}
+              <div className="shrink-0 lg:hidden">
+                <ProfilePhoto size="sm" />
               </div>
-              <div className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl text-[#e0e0e0]"
-                style={{ textShadow: "-2px 0 rgba(255,0,255,0.25),2px 0 rgba(0,212,255,0.25)" }}>
-                NANDY
+
+              {/* Name */}
+              <div className="font-display font-black uppercase leading-none">
+                <div className="text-muted-fg text-xs sm:text-sm font-label tracking-widest mb-2">&gt; IDENTIFY USER...</div>
+                <div className="glitch-text text-4xl sm:text-6xl lg:text-7xl text-accent"
+                  data-text="SOHOM"
+                  style={{ textShadow: "0 0 30px rgba(0,255,136,0.35),0 0 60px rgba(0,255,136,0.15)" }}>
+                  SOHOM
+                </div>
+                <div className="text-4xl sm:text-6xl lg:text-7xl text-[#e0e0e0]"
+                  style={{ textShadow: "-2px 0 rgba(255,0,255,0.25),2px 0 rgba(0,212,255,0.25)" }}>
+                  NANDY
+                </div>
               </div>
             </div>
 
@@ -65,9 +74,9 @@ export default function Hero() {
             <p className="text-muted-fg text-xs sm:text-sm leading-relaxed font-mono border-l-2 border-accent pl-3 sm:pl-4">
               Final-year B.Tech CS @{" "}
               <span className="text-accent">Sister Nivedita University</span>.
-              Building <span className="text-tertiary">multi-cloud threat intelligence</span> using GNNs.
-              {/* Fine-tuning <span className="text-secondary">LLaMA 3.1 8B</span> for SIEM log generation.
-              CGPA: <span className="text-accent font-bold">8.20</span>. */}
+              Building <span className="text-tertiary">multi-cloud threat intelligence</span> with GNNs.
+              Fine-tuning <span className="text-secondary">LLaMA 3.1 8B</span> for SIEM log generation.
+              CGPA: <span className="text-accent font-bold">8.20</span>.
             </p>
 
             {/* CTA Buttons */}
@@ -85,9 +94,9 @@ export default function Hero() {
             {/* Social links */}
             <div className="flex items-center gap-3 sm:gap-4 mt-1 flex-wrap">
               {[
-                { icon: Github,   label: "github.com/SohomNandy",    href: "https://github.com/SohomNandy" },
-                { icon: Linkedin, label: "linkedin",                  href: "https://linkedin.com/in/sohom-nandy" },
-                { icon: Mail,     label: "sohomnandy9@gmail.com",     href: "mailto:sohomnandy9@gmail.com" },
+                { icon: Github,   label: "github.com/SohomNandy", href: "https://github.com/SohomNandy" },
+                { icon: Linkedin, label: "linkedin",               href: "https://linkedin.com/in/sohom-nandy" },
+                { icon: Mail,     label: "sohomnandy9@gmail.com",  href: "mailto:sohomnandy9@gmail.com" },
               ].map(({ icon: Icon, label, href }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-muted-fg hover:text-accent transition-colors duration-200 text-xs font-label group min-w-0"
@@ -99,18 +108,28 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* RIGHT — HUD panel, hidden below lg */}
+          {/* RIGHT — HUD panel + photo + globe, desktop only */}
           <div className="lg:col-span-2 hidden lg:block">
             <div className="relative pr-12" style={{ overflow: "visible" }}>
-              {/* Globe behind panel */}
-              <div className="absolute -top-16 -left-16 opacity-25 pointer-events-none z-0">
+
+              {/* Globe — glowing behind everything */}
+              <div className="absolute -top-20 -left-20 opacity-60 pointer-events-none z-0"
+                style={{ filter: "drop-shadow(0 0 20px rgba(0,255,136,0.4))" }}>
                 <HoloGlobeCanvas />
               </div>
+
+              {/* Identity panel */}
               <div className="relative z-10">
                 <IdentityPanel />
               </div>
+
+              {/* Photo — anchored bottom-left of panel, inside the pr-12 space */}
+              <div className="absolute -bottom-6 -left-2 z-20">
+                <ProfilePhoto size="md" />
+              </div>
             </div>
           </div>
+
         </div>
       </div>
 
@@ -123,6 +142,57 @@ export default function Hero() {
   );
 }
 
+/* ── Profile Photo ─────────────────────────────────────────── */
+function ProfilePhoto({ size = "md" }: { size?: "sm" | "md" }) {
+  const w = size === "sm" ? 72 : 96;
+  const h = size === "sm" ? 88 : 116;
+  const cut = size === "sm" ? 8 : 10;
+
+  const clip = `polygon(0 ${cut}px,${cut}px 0,calc(100% - ${cut}px) 0,100% ${cut}px,100% calc(100% - ${cut}px),calc(100% - ${cut}px) 100%,${cut}px 100%,0 calc(100% - ${cut}px))`;
+
+  return (
+    <div className="relative group" style={{ width: `${w}px`, height: `${h}px` }}>
+
+      {/* Neon border frame */}
+      <div className="absolute inset-0 border border-accent"
+        style={{ clipPath: clip, boxShadow: "0 0 14px rgba(0,255,136,0.4),inset 0 0 12px rgba(0,255,136,0.05)" }} />
+
+      {/* Photo + overlays */}
+      <div className="absolute inset-0 overflow-hidden" style={{ clipPath: clip }}>
+        <img
+          src="/yeahh.jpg"
+          alt="Sohom Nandy"
+          className="w-full h-full object-cover object-top"
+          style={{ filter: "grayscale(100%) brightness(0.85) contrast(1.2)", transition: "filter 0.3s ease" }}
+        />
+        {/* Green phosphor tint */}
+        <div className="absolute inset-0" style={{ background: "rgba(0,255,136,0.12)", mixBlendMode: "screen" }} />
+        {/* CRT scanlines */}
+        <div className="absolute inset-0 pointer-events-none"
+          style={{ background: "repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.22) 2px,rgba(0,0,0,0.22) 4px)" }} />
+        {/* Magenta hover glitch */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-150"
+          style={{ background: "rgba(255,0,255,0.09)", mixBlendMode: "screen" }} />
+      </div>
+
+      {/* Corner HUD marks */}
+      <div className="absolute top-0 left-0 w-3 h-3 border-l-2 border-t-2 border-accent"
+        style={{ boxShadow: "-2px -2px 5px rgba(0,255,136,0.5)" }} />
+      <div className="absolute top-0 right-0 w-3 h-3 border-r-2 border-t-2 border-accent"
+        style={{ boxShadow: "2px -2px 5px rgba(0,255,136,0.5)" }} />
+      <div className="absolute bottom-0 left-0 w-3 h-3 border-l-2 border-b-2 border-accent" />
+      <div className="absolute bottom-0 right-0 w-3 h-3 border-r-2 border-b-2 border-accent" />
+
+      {/* [VERIFIED] tag */}
+      <div className="absolute -bottom-5 left-0 right-0 text-center font-label tracking-widest text-accent"
+        style={{ fontSize: "8px", textShadow: "0 0 6px rgba(0,255,136,0.8)" }}>
+        [VERIFIED]
+      </div>
+    </div>
+  );
+}
+
+/* ── Identity Panel ────────────────────────────────────────── */
 function IdentityPanel() {
   const skills = [
     { label: "ML / GNN",      val: 90, color: "#00ff88" },
@@ -177,14 +247,16 @@ function IdentityPanel() {
 
       {/* Vertical OPEN_TO_HIRE tab */}
       <div className="absolute top-0 h-full flex items-center" style={{ left: "calc(100% + 8px)" }} aria-hidden="true">
-        <div className="flex flex-row items-center justify-center gap-6 bg-card border border-accent text-accent font-label"
+        <div className="bg-card border border-accent text-accent font-label"
           style={{
             writingMode: "vertical-rl", textOrientation: "mixed",
-            transform: "rotate(360deg)", fontSize: "12px", letterSpacing: "5px",
+            transform: "rotate(180deg)", fontSize: "9px", letterSpacing: "3px",
             padding: "16px 6px", boxShadow: "0 0 14px rgba(0,255,136,0.2)", whiteSpace: "nowrap",
             clipPath: "polygon(0 6px,6px 0,calc(100% - 6px) 0,100% 6px,100% calc(100% - 6px),calc(100% - 6px) 100%,6px 100%,0 calc(100% - 6px))",
+            display: "flex", alignItems: "center", gap: "6px",
           }}>
-          <span className="w-2.5 h-2.5 rounded-full bg-accent animate-pulse" style={{ boxShadow: "0 0 8px #00ff88", flexShrink: 0 }} />
+          <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shrink-0"
+            style={{ boxShadow: "0 0 5px #00ff88" }} />
           OPEN_TO_HIRE
         </div>
       </div>
@@ -192,6 +264,7 @@ function IdentityPanel() {
   );
 }
 
+/* ── Json Line ─────────────────────────────────────────────── */
 function JsonLine({ k, v, vc }: { k: string; v: string; vc: string }) {
   const colorMap: Record<string, string> = { accent: "#00ff88", secondary: "#ff00ff", tertiary: "#00d4ff", muted: "#6b7280" };
   return (
