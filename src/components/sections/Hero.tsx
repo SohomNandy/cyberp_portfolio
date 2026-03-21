@@ -118,14 +118,9 @@ export default function Hero() {
                 <HoloGlobeCanvas />
               </div>
 
-              {/* Identity panel */}
+              {/* Identity panel — photo now lives inside it */}
               <div className="relative z-10">
                 <IdentityPanel />
-              </div>
-
-              {/* Photo — anchored bottom-left of panel, inside the pr-12 space */}
-              <div className="absolute -bottom-6 -left-2 z-20">
-                <ProfilePhoto size="md" />
               </div>
             </div>
           </div>
@@ -212,6 +207,25 @@ function IdentityPanel() {
           <span className="ml-2">identity.json</span>
           <span className="ml-auto opacity-50 text-xs">UID: SN-0x4A2F</span>
         </div>
+
+        {/* Photo row — sits between header and JSON */}
+        <div className="flex items-center gap-4 px-4 py-3 border-b border-border"
+          style={{ background: "rgba(0,255,136,0.03)" }}>
+          <ProfilePhoto size="sm" />
+          <div>
+            <div className="font-display font-bold text-sm text-accent tracking-wider"
+              style={{ textShadow: "0 0 8px rgba(0,255,136,0.4)" }}>
+              SOHOM NANDY
+            </div>
+            <div className="font-label text-xs text-tertiary tracking-widest mt-0.5">
+              AI/ML ENGINEER
+            </div>
+            <div className="font-label text-xs text-muted-fg tracking-wider mt-0.5">
+              Kolkata, IN
+            </div>
+          </div>
+        </div>
+
         <div className="p-4 font-mono text-xs space-y-1">
           <div className="text-muted-fg">{"{"}</div>
           <JsonLine k="name"        v='"Sohom Nandy"'                           vc="accent"    />
