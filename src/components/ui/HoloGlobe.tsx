@@ -15,7 +15,8 @@ export default function HoloGlobe() {
 
     const cx = 170, cy = 170, R = 130;
     let t = 0, mouseX = 0, mouseY = 0;
-    let rotX = 0.3, rotY = 0;
+    const rotX = 0.3;
+    let rotY = 0;
     let animId: number;
 
     const onMouseMove = (e: MouseEvent) => {

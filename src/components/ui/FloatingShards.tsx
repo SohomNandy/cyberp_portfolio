@@ -75,7 +75,7 @@ export default function FloatingShards() {
         pts.forEach(([px, py], i) => {
           const mx = x + px;
           const my = y + py;
-          i === 0 ? ctx.moveTo(mx, my) : ctx.lineTo(mx, my);
+          if (i === 0) { ctx.moveTo(mx, my); } else { ctx.lineTo(mx, my); }
         });
         ctx.closePath();
 

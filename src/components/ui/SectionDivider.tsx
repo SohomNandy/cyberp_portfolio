@@ -85,7 +85,7 @@ export default function SectionDivider() {
         const dist = Math.abs(x - pulseX);
         const amp  = Math.max(0, 1 - dist / 200) * 6;
         const y    = H / 2 + Math.sin(i * 0.4 - t * 0.08) * amp;
-        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        if (i === 0) { ctx.moveTo(x, y); } else { ctx.lineTo(x, y); }
       }
       ctx.strokeStyle = "rgba(0,212,255,0.4)";
       ctx.lineWidth   = 1;
