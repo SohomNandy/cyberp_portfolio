@@ -1,5 +1,6 @@
 "use client";
 import { useInView } from "@/hooks/useInView";
+import FloatingShardsCanvas from "@/components/ui/FloatingShardsCanvas";
 import { Github, ExternalLink, ChevronRight, Shield, Brain } from "lucide-react";
 
 const projects = [
@@ -62,7 +63,11 @@ export default function Projects() {
   const { ref, inView } = useInView(0.1);
 
   return (
-    <section id="projects" className="relative py-24">
+    <section id="projects" className="relative py-24 overflow-hidden">
+      {/* Floating 3D shards background */}
+      <div className="absolute inset-0 z-0 opacity-40">
+        <FloatingShardsCanvas />
+      </div>
       <div
         className="absolute inset-0"
         style={{

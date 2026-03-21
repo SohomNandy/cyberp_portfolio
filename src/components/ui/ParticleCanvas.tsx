@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 
 const ParticleBackground = dynamic(
-  () => import("@/components/ParticleBackground"),
+  () => import("@/components/ui/ParticleBackground"),
   { ssr: false }
 );
 

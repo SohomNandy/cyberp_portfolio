@@ -1,5 +1,6 @@
 "use client";
 import { useInView } from "@/hooks/useInView";
+import NeuralNetworkCanvas from "@/components/ui/NeuralNetworkCanvas";
 
 const skillGroups = [
   {
@@ -112,6 +113,27 @@ export default function Skills() {
           ))}
         </div>
 
+
+        {/* Neural Network Visualizer */}
+        <div
+          className="mt-10 border border-border overflow-hidden"
+          style={{
+            clipPath: "polygon(0 12px,12px 0,calc(100% - 12px) 0,100% 12px,100% calc(100% - 12px),calc(100% - 12px) 100%,12px 100%,0 calc(100% - 12px))",
+            height: "200px",
+            background: "rgba(18,18,26,0.8)",
+          }}
+        >
+          <div className="terminal-header">
+            <div className="terminal-dot bg-destructive" />
+            <div className="terminal-dot bg-[#ffb000]" />
+            <div className="terminal-dot bg-accent" />
+            <span className="ml-2 font-label text-xs text-accent tracking-wider">neural_architecture.viz</span>
+            <span className="ml-auto font-label text-xs text-muted-fg">LIVE SIMULATION</span>
+          </div>
+          <div className="h-[calc(100%-36px)]">
+            <NeuralNetworkCanvas />
+          </div>
+        </div>
 
         {/* CERTS HIDDEN — uncomment to re-enable
         <div className="mt-10">

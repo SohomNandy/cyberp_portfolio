@@ -1,5 +1,6 @@
 "use client";
 import { useTypewriter } from "@/hooks/useTypewriter";
+import HoloGlobeCanvas from "@/components/ui/HoloGlobeCanvas";
 import { ArrowRight, Terminal, Github, Linkedin, Mail } from "lucide-react";
 
 const roles = [
