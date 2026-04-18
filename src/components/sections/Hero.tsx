@@ -2,6 +2,8 @@
 import { useTypewriter } from "@/hooks/useTypewriter";
 import HoloGlobeCanvas from "@/components/ui/HoloGlobeCanvas";
 import MagneticButton from "@/components/ui/MagneticButton";
+import Image from "next/image";
+
 import { ArrowRight, Terminal, Github, Linkedin, Mail } from "lucide-react";
 
 const roles = [
@@ -114,7 +116,7 @@ export default function Hero() {
                 { val: "83%",   label: "PRECISION GAIN",   color: "#00ff88" },
                 { val: "410K+", label: "TRAINING PAIRS",   color: "#00d4ff" },
                 { val: "8.20",  label: "CGPA",             color: "#ffb000" },
-              ].map((s, i) => (
+              ].map((s) => (
                 <div key={s.label}
                   className="flex-1 px-4 first:pl-0 border-l border-border first:border-0">
                   <div className="font-display font-bold text-lg"
@@ -176,9 +178,9 @@ function ProfilePhoto({ size = "md" }: { size?: "sm" | "md" }) {
 
       {/* Photo + overlays */}
       <div className="absolute inset-0 overflow-hidden" style={{ clipPath: clip }}>
-        <img
+        <Image
           src="/yeahh.jpg"
-          alt="Sohom Nandy"
+          alt="Sohom Nandy" fill
           className="w-full h-full object-cover object-top"
           style={{ filter: "grayscale(100%) brightness(0.85) contrast(1.2)", transition: "filter 0.3s ease" }}
         />
