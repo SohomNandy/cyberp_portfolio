@@ -1,6 +1,7 @@
 "use client";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import HoloGlobeCanvas from "@/components/ui/HoloGlobeCanvas";
+import MagneticButton from "@/components/ui/MagneticButton";
 import { ArrowRight, Terminal, Github, Linkedin, Mail } from "lucide-react";
 
 const roles = [
@@ -81,14 +82,14 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mt-1">
-              <a href="#projects"
+              <MagneticButton href="#projects"
                 className="btn-cyber btn-cyber-solid flex items-center gap-1.5 text-xs px-4 py-2 sm:px-5 sm:py-2.5">
                 [ VIEW PROJECTS ] <ArrowRight size={12} strokeWidth={2.5} />
-              </a>
-              <a href="#contact"
+              </MagneticButton>
+              <MagneticButton href="#contact"
                 className="btn-cyber flex items-center gap-1.5 text-xs px-4 py-2 sm:px-5 sm:py-2.5">
                 <Terminal size={12} strokeWidth={2.5} /> [ CONTACT ]
-              </a>
+              </MagneticButton>
             </div>
 
             {/* Social links */}

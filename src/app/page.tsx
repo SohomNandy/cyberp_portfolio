@@ -9,10 +9,12 @@ import Footer            from "@/components/sections/Footer";
 import CursorOverlay     from "@/components/ui/CursorOverlay";
 import ParticleCanvas    from "@/components/ui/ParticleCanvas";
 import SectionDividerCanvas from "@/components/ui/SectionDividerCanvas";
+import ClientShell       from "@/components/ui/ClientShell";
 
 export default function Home() {
   return (
-    <>
+    <ClientShell>
+      {/* Atmosphere overlays */}
       <CursorOverlay />
       <div className="scanlines-overlay"  aria-hidden="true" />
       <div className="scanline-sweep"     aria-hidden="true" />
@@ -36,6 +38,6 @@ export default function Home() {
       </main>
 
       <Footer />
-    </>
+    </ClientShell>
   );
 }
