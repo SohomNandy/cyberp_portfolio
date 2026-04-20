@@ -64,6 +64,7 @@ export default function BootSequence({ onComplete }: Props) {
             clearInterval(flicker);
             setPhase("done");
             sessionStorage.setItem("nexus_booted", "1");
+            window.scrollTo({ top: 0, behavior: "instant" });
             setTimeout(onComplete, 100);
           }
         }, 60);
@@ -119,7 +120,7 @@ export default function BootSequence({ onComplete }: Props) {
         <div className="mb-8 text-center">
           <div className="font-display font-black text-4xl sm:text-5xl text-accent tracking-widest"
             style={{ textShadow: "0 0 30px rgba(0,255,136,0.6),0 0 60px rgba(0,255,136,0.3)" }}>
-            WELCOME TO MY DIGITAL REALM
+            NEXUS
           </div>
           <div className="font-label text-xs text-muted-fg tracking-[0.4em] mt-1">
             SOHOM NANDY // AI-ML ENGINEER

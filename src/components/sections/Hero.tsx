@@ -98,8 +98,8 @@ export default function Hero() {
             <div className="flex items-center gap-3 sm:gap-4 mt-1 flex-wrap">
               {[
                 { icon: Github,   label: "github.com/SohomNandy", href: "https://github.com/SohomNandy" },
-                { icon: Linkedin, label: "linkedin",               href: "https://linkedin.com/in/sohom-nandy" },
-                { icon: Mail,     label: "sohomnandy9@gmail.com",  href: "mailto:sohomnandy9@gmail.com" },
+                { icon: Linkedin, label: "linkedin", href: "https://linkedin.com/in/sohom-nandy" },
+                { icon: Mail,     label: "sohomnandy9@gmail.com", href: "mailto:sohomnandy9@gmail.com" },
               ].map(({ icon: Icon, label, href }) => (
                 <a key={label} href={href} target="_blank" rel="noopener noreferrer"
                   className="flex items-center gap-1.5 text-muted-fg hover:text-accent transition-colors duration-200 text-xs font-label group min-w-0"
